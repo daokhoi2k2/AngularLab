@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="card mx-auto p-3 my-3" style="width: 18rem">
+    <img class="card-img-top" [src]="sp.urlImage" alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">{{ sp.tensp }}</h5>
+      <p class="card-text">
+        {{ sp.giasp * 23 | currency: "VND":"VNĐ " }}
+      </p>
+      <a href="#" class="btn btn-primary">Mua ngay</a>
+    </div>
+  </div>
+</div>

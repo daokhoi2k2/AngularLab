@@ -1,0 +1,61 @@
+<div class="card">
+  <div class="card-header">
+    DANH SÁCH SẢN PHẨM
+    <label class="float-end">
+      <input name="tk" />
+      <em class="text-danger"> </em>
+    </label>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Hình</th>
+          <th>Tên SP</th>
+          <th>Mã SP</th>
+          <th>Ngày</th>
+          <th>Giá</th>
+          <th>Đánh giác</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- dòng dữ liệu-->
+          <td>HinhSP</td>
+          <td>TenSP</td>
+          <td>CodeSP</td>
+          <td>NgaySP</td>
+          <td>GiaSP</td>
+          <td>Rate</td>
+        </tr>
+        <tr *ngFor="let p of products">
+          <td>
+            <img [src]="p.urlImage" height="50" />
+          </td>
+          <td (click)="xemChiTiet(p.id)">{{ p.tensp | uppercase }}</td>
+          <td>{{ p.code }}</td>
+          <td>{{ p.ngay | date: "dd/MM/Y" }}</td>
+          <td>{{ p.giasp * 23 | currency: "VND" : "VNĐ" }}</td>
+          <td>
+            <div
+              class="crop"
+              [style.width.px]="(p.starRate * 90) / 5"
+              title="rating"
+            >
+              <div style="width: 90px">
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer">
+    Số lượng sản phẩm: <b>{{ products.length }}</b>
+  </div>
+</div>

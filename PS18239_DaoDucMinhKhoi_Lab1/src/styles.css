@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+#listSP {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#listSP div {
+  flex-basis: 30%;
+  margin: 20px 0;
+}
+
+#listSP div img {
+  width: 100%;
+}
